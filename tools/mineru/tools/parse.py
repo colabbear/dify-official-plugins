@@ -113,10 +113,11 @@ class MineruTool(Tool):
         logger.info(f"Starting file parse request to {task_url}")
         params = {
             'parse_method': tool_parameters.get('parse_method', 'auto'),
-            'return_layout': False,
-            'return_info': False,
+            'return_md': True,,
             'return_content_list': True,
-            'return_images': True
+            'return_images': True,
+            'return_middle_json': tool_parameters.get('return_middle_json', False),
+            'return_model_output': tool_parameters.get('return_model_output', False)
         }
 
         file_data = {
